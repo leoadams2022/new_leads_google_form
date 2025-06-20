@@ -288,3 +288,191 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   populateSelectInputs();
 });
+
+class AlertManager {
+  constructor(containerId, position = "bottom", direction = "rtl") {
+    this.container = document.getElementById(containerId);
+    if (!this.container) {
+      throw new Error(`Alert container with ID "${containerId}" not found.`);
+    }
+    // container should have the following styles:
+    this.container.classList.add("overflow-x-hidden", "overflow-y-auto");
+    // Validate position and direction
+    if (position !== "bottom" && position !== "top") {
+      throw new Error(`Invalid position "${position}". Use "top" or "bottom".`);
+    }
+    if (direction !== "rtl" && direction !== "ltr") {
+      throw new Error(`Invalid direction "${direction}". Use "rtl" or "ltr".`);
+    }
+    // Set the position and direction
+    this.position = position;
+    this.direction = direction;
+    this.translateClass =
+      this.direction === "rtl" ? "translate-x-full" : "-translate-x-full";
+
+    this.variants = {
+      danger: [
+        "text-red-800",
+        "border-red-300",
+        "bg-red-50",
+        "dark:text-red-400",
+        "dark:bg-gray-800",
+        "dark:border-red-800",
+      ],
+      info: [
+        "text-blue-800",
+        "border-blue-300",
+        "bg-blue-50",
+        "dark:text-blue-400",
+        "dark:bg-gray-800",
+        "dark:border-blue-800",
+      ],
+      success: [
+        "text-green-800",
+        "border-green-300",
+        "bg-green-50",
+        "dark:text-green-400",
+        "dark:bg-gray-800",
+        "dark:border-green-800",
+      ],
+      default: [
+        "border-gray-300",
+        "bg-gray-50",
+        "dark:bg-gray-800",
+        "dark:border-gray-600",
+      ],
+    };
+  }
+
+  show(message, timeout = 3000, variant = "default") {
+    const { alertElement, closeButton } = this._createAlertElement(
+      message,
+      this.variants[variant]?.join(" ") || this.variants.default.join(" ")
+    );
+    if (this.position === "top") {
+      this.container.append(alertElement);
+    } else {
+      this.container.prepend(alertElement);
+    }
+    setTimeout(() => {
+      alertElement.classList.remove(`${this.translateClass}`);
+    }, 50);
+
+    closeButton.addEventListener("click", () => {
+      this._dismissAlert(alertElement);
+    });
+
+    setTimeout(() => {
+      this._dismissAlert(alertElement);
+    }, timeout);
+  }
+
+  _dismissAlert(alertElement) {
+    alertElement.classList.add(`${this.translateClass}`);
+    setTimeout(() => {
+      alertElement.remove();
+    }, 300);
+  }
+
+  _createAlertElement(alertText, variantClass) {
+    const container = document.createElement("div");
+
+    container.className =
+      this.translateClass +
+      " duration-300 ease-in-out border border-t-4 items-center p-4 mb-3 flex " +
+      variantClass;
+    container.setAttribute("role", "alert");
+
+    const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    icon.setAttribute("class", "shrink-0 w-4 h-4");
+    icon.setAttribute("aria-hidden", "true");
+    icon.setAttribute("fill", "currentColor");
+    icon.setAttribute("viewBox", "0 0 20 20");
+
+    const iconPath = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "path"
+    );
+    iconPath.setAttribute(
+      "d",
+      "M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+    );
+    icon.appendChild(iconPath);
+
+    const textDiv = document.createElement("div");
+    textDiv.className = "ms-3 text-sm font-medium";
+    textDiv.textContent = alertText;
+
+    const closeButton = document.createElement("button");
+    closeButton.setAttribute("type", "button");
+    closeButton.setAttribute("aria-label", "Close");
+    closeButton.className =
+      "ms-auto -mx-1.5 -my-1.5 bg-slate-50 rounded-lg focus:ring-2 p-1.5 inline-flex items-center justify-center h-8 w-8 dark:bg-slate-800 dark:hover:bg-slate-700";
+
+    const srOnly = document.createElement("span");
+    srOnly.className = "sr-only";
+    srOnly.textContent = "Dismiss";
+
+    const closeIcon = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "svg"
+    );
+    closeIcon.setAttribute("class", "w-3 h-3");
+    closeIcon.setAttribute("aria-hidden", "true");
+    closeIcon.setAttribute("fill", "none");
+    closeIcon.setAttribute("viewBox", "0 0 14 14");
+
+    const closePath = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "path"
+    );
+    closePath.setAttribute("stroke", "currentColor");
+    closePath.setAttribute("stroke-linecap", "round");
+    closePath.setAttribute("stroke-linejoin", "round");
+    closePath.setAttribute("stroke-width", "2");
+    closePath.setAttribute("d", "m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6");
+
+    closeIcon.appendChild(closePath);
+    closeButton.appendChild(srOnly);
+    closeButton.appendChild(closeIcon);
+
+    container.appendChild(icon);
+    container.appendChild(textDiv);
+    container.appendChild(closeButton);
+
+    return {
+      alertElement: container,
+      closeButton: closeButton,
+    };
+  }
+}
+
+const alertManager = new AlertManager("alerts-container", "top");
+
+function test() {
+  const arr = [
+    "This is a test message",
+    "This is a success message",
+    "This is an info message",
+    "This is a danger message",
+    "This is a test message",
+    "This is a success message",
+    "This is an info message",
+    "This is a danger message",
+  ];
+  const variants = [
+    "default",
+    "success",
+    "info",
+    "danger",
+    "default",
+    "success",
+    "info",
+    "danger",
+  ];
+  arr.forEach((message, index) => {
+    setTimeout(() => {
+      alertManager.show(index + " " + message, 8000, variants[index]);
+    }, index * 1000);
+  });
+}
