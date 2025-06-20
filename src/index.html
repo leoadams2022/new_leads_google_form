@@ -5,14 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="output.css" rel="stylesheet" />
   </head>
-  <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
-    <div class="bg-white rounded-lg shadow-md p-6 w-full max-w-md">
-      <h1 class="text-2xl font-bold text-gray-800 mb-6">
+  <body
+    class="bg-gray-100 dark:bg-gray-900 text-black dark:text-white min-h-screen flex items-center justify-center p-4"
+  >
+    <!-- dark/light mode toggle button  -->
+    <button
+      id="theme-toggle"
+      type="button"
+      class="text-gray-500 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 fixed top-4 right-4 z-50"
+    >
+      <svg
+        id="theme-toggle-dark-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="hidden w-5 h-5"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+        />
+      </svg>
+      <svg
+        id="theme-toggle-light-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="hidden w-5 h-5"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+        />
+      </svg>
+    </button>
+    <!-- from container  -->
+    <div
+      class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 w-full max-w-md"
+    >
+      <!-- from title  -->
+      <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
         Lead Information Form
       </h1>
 
       <form
-        class="space-y-4"
+        class="space-y-6"
         action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScP64Y7mrK3-lPMSwYrqFe6gEMFxM3zA4A-2U1-ins_iIKznA/formResponse"
         target="_self"
         method="POST"
@@ -26,17 +69,51 @@
         data-last-entry="7"
         data-is-first-page="true"
       >
-        <input type="hidden" name="fvv" value="1" />
-        <input
-          type="hidden"
-          name="partialResponse"
-          value='[null,null,"1741597018647186678"]'
-        />
-        <input type="hidden" name="pageHistory" value="0" />
-        <input type="hidden" name="fbzx" value="1741597018647186678" />
-        <input type="hidden" name="submissionTimestamp" value="-1" />
-        <!-- Phone Field -->
+        <!-- hidden inputs  -->
         <div>
+          <input type="hidden" name="fvv" value="1" />
+          <input
+            type="hidden"
+            name="partialResponse"
+            value='[null,null,"1741597018647186678"]'
+          />
+          <input type="hidden" name="pageHistory" value="0" />
+          <input type="hidden" name="fbzx" value="1741597018647186678" />
+          <input type="hidden" name="submissionTimestamp" value="-1" />
+        </div>
+
+        <!-- Phone Field -->
+        <div class="relative">
+          <input
+            type="text"
+            id="phone"
+            name="entry.1063092661"
+            class="block py-2.5 ps-6 pe-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            placeholder=" "
+          />
+          <label
+            for="phone"
+            class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-placeholder-shown:start-6 peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto z-10 redstar"
+            >Phone number</label
+          >
+          <span
+            class="absolute start-0 bottom-3 text-gray-500 dark:text-gray-400 peer-focus:text-blue-600 peer-focus:dark:text-blue-600"
+          >
+            <svg
+              class="w-4 h-4 rtl:rotate-[270deg]"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 19 18"
+            >
+              <path
+                d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z"
+              />
+            </svg>
+          </span>
+        </div>
+        <!-- <div>
           <label
             for="phone"
             class="block text-sm font-medium text-gray-700 mb-1 redstar"
@@ -51,10 +128,25 @@
             oninput="this.value = this.value.replace(/[^\d\s]/g, '')"
             required
           />
-        </div>
+        </div> -->
 
         <!-- Last Name Field -->
-        <div>
+        <div class="relative">
+          <input
+            type="text"
+            id="lastName"
+            name="entry.1306209959"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            value="unknown"
+          />
+          <label
+            for="lastName"
+            class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+            >Name</label
+          >
+        </div>
+        <!-- <div>
           <label
             for="lastName"
             class="block text-sm font-medium text-gray-700 mb-1"
@@ -68,10 +160,25 @@
             placeholder="Enter last name"
             value="unknown"
           />
-        </div>
+        </div> -->
 
         <!-- Clicked Add Field -->
         <div>
+          <label
+            for="clickedAdd"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white redstar"
+            >Clicked Add</label
+          >
+          <select
+            id="clickedAdd"
+            name="entry.2133019744"
+            class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          >
+            <option selected>Select clicked Add</option>
+          </select>
+        </div>
+        <!-- <div>
           <label
             for="clickedAdd"
             class="block text-sm font-medium text-gray-700 mb-1 redstar"
@@ -81,27 +188,61 @@
             id="clickedAdd"
             name="entry.2133019744"
             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
           >
             <option value="" selected>Select clicked Add</option>
           </select>
-        </div>
+        </div> -->
 
         <!-- show more\less button -->
         <button
+          type="button"
+          id="moreBtn"
+          class="inline-flex items-center text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-1 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
+        >
+          <span>Show More</span>
+          <svg
+            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+        </button>
+        <!-- <button
           id="moreBtn"
           class="text-md text-blue-400 underline italic font-extrabold cursor-pointer"
         >
           show more
-        </button>
+        </button> -->
 
         <!-- Extra Info Fields-->
         <div
           id="extraInfo"
-          class="space-y-4 h-0 overflow-hidden transition-all duration-300"
+          class="space-y-6 mt-4 h-0 overflow-hidden transition-all duration-300 origin-top"
         >
           <!-- Company Field -->
-          <div>
+          <div class="relative">
+            <input
+              id="company"
+              name="entry.1079823253"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+            />
+            <label
+              for="company"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+              >Company</label
+            >
+          </div>
+          <!-- <div>
             <label
               for="company"
               class="block text-sm font-medium text-gray-700 mb-1"
@@ -114,19 +255,21 @@
               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter company name"
             />
-          </div>
+          </div> -->
+
+          <!-- lead status and disposition -->
           <div class="grid grid-cols-2 gap-4">
             <!-- Lead Status Field -->
             <div>
               <label
                 for="leadStatus"
-                class="block text-sm font-medium text-gray-700 mb-1"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >Lead Status</label
               >
               <select
                 id="leadStatus"
                 name="entry.1010467890"
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                 <option value="" selected>Select lead status</option>
               </select>
@@ -136,13 +279,13 @@
             <div>
               <label
                 for="disposition"
-                class="block text-sm font-medium text-gray-700 mb-1"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >Disposition</label
               >
               <select
                 id="disposition"
                 name="entry.32520454"
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                 <option value="" selected>Select disposition</option>
               </select>
@@ -151,6 +294,20 @@
 
           <!-- Notes Field -->
           <div>
+            <label
+              for="notes"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Your Notes</label
+            >
+            <textarea
+              id="notes"
+              name="entry.2023355555"
+              rows="4"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+              placeholder="Write your notes here..."
+            ></textarea>
+          </div>
+          <!-- <div>
             <label
               for="notes"
               class="block text-sm font-medium text-gray-700 mb-1"
@@ -164,15 +321,20 @@
               placeholder="Enter any additional notes"
             ></textarea>
           </div>
+          -->
         </div>
 
         <!-- Submit Button -->
-        <div class="pt-2">
+        <div class="">
           <button
             type="submit"
-            class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            class="relative w-full inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 cursor-pointer"
           >
-            Submit
+            <span
+              class="relative w-full font-extrabold px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent"
+            >
+              Submit</span
+            >
           </button>
         </div>
       </form>
@@ -180,227 +342,6 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const moreBtn = document.getElementById("moreBtn");
-        const extraInfo = document.getElementById("extraInfo");
-        moreBtn.addEventListener("click", function (e) {
-          e.preventDefault(); // Prevent default link behavior
-          if (
-            extraInfo.style.height === "0px" ||
-            extraInfo.style.height === ""
-          ) {
-            extraInfo.style.height = "283px"; // Expand the section
-            extraInfo.style.overflow = "visible"; // Allow   overflow
-            moreBtn.textContent = "show less"; // Change button text to "less"
-          } else {
-            extraInfo.style.height = "0px"; // Collapse the section
-            extraInfo.style.overflow = "hidden"; // Hide overflow
-            moreBtn.textContent = "show more"; // Change button text to "more"
-          }
-        });
-
-        function populateSelectInputs() {
-          const clickedAddSelect = document.getElementById("clickedAdd");
-          const clickedAddSelectOptions = [
-            {
-              value: "سلامة الموقف الضريبي",
-              text: "سلامة الموقف الضريبي",
-              selected: false,
-            },
-            {
-              value: "خدمة التسعير و الاستشارة المجانية",
-              text: "خدمة التسعير و الاستشارة المجانية",
-              selected: false,
-            },
-            { value: "unknown", text: "Unknown", selected: false },
-          ];
-          // Populate the clickedAdd select element
-          clickedAddSelectOptions.forEach((option) => {
-            const opt = document.createElement("option");
-            opt.value = option.value;
-            opt.textContent = option.text;
-            opt.selected = option.selected;
-            clickedAddSelect.appendChild(opt);
-          });
-
-          const leadStatusSelect = document.getElementById("leadStatus");
-          const leadStatusSelectOptions = [
-            {
-              value: "Attempting to Contact",
-              text: "Attempting to Contact",
-              selected: false,
-            },
-            {
-              value: "Cold",
-              text: "Cold",
-              selected: false,
-            },
-            {
-              value: "Contact Failed",
-              text: "Contact Failed",
-              selected: false,
-            },
-            {
-              value: "Future Interest",
-              text: "Future Interest",
-              selected: false,
-            },
-            {
-              value: "Hot",
-              text: "Hot",
-              selected: false,
-            },
-            {
-              value: "Interested",
-              text: "Interested",
-              selected: false,
-            },
-            {
-              value: "Junk Lead",
-              text: "Junk Lead",
-              selected: false,
-            },
-            {
-              value: "Meeting Scheduled",
-              text: "Meeting Scheduled",
-              selected: false,
-            },
-            {
-              value: "Not Interested",
-              text: "Not Interested",
-              selected: false,
-            },
-            {
-              value: "Not Qualified",
-              text: "Not Qualified",
-              selected: false,
-            },
-            {
-              value: "Under Follow-Up",
-              text: "Under Follow-Up",
-              selected: false,
-            },
-          ];
-          leadStatusSelectOptions.forEach((option) => {
-            const opt = document.createElement("option");
-            opt.value = option.value;
-            opt.textContent = option.text;
-            opt.selected = option.selected;
-            leadStatusSelect.appendChild(opt);
-          });
-
-          const dispositionSelect = document.getElementById("disposition");
-          const dispositionSelectOptions = [
-            {
-              value: "Busy",
-              text: "Busy",
-              selected: false,
-            },
-            {
-              value: "Closed",
-              text: "Closed",
-              selected: false,
-            },
-            {
-              value: "Contact me Later.",
-              text: "Contact me Later.",
-              selected: false,
-            },
-            {
-              value: "Contact me via Email",
-              text: "Contact me via Email",
-              selected: false,
-            },
-            {
-              value: "Contact me via WhatsApp",
-              text: "Contact me via WhatsApp",
-              selected: false,
-            },
-            {
-              value: "Customer Refused Contact",
-              text: "Customer Refused Contact",
-              selected: false,
-            },
-            {
-              value: "CX'll inform the management",
-              text: "CX'll inform the management",
-              selected: false,
-            },
-            {
-              value: "Disconnected Number",
-              text: "Disconnected Number",
-              selected: false,
-            },
-            {
-              value: "Do Not Call (DNC)",
-              text: "Do Not Call (DNC)",
-              selected: false,
-            },
-            {
-              value: "Future Interest",
-              text: "Future Interest",
-              selected: false,
-            },
-            {
-              value: "I Will Get Back To You",
-              text: "I Will Get Back To You",
-              selected: false,
-            },
-            {
-              value: "Language Barrier",
-              text: "Language Barrier",
-              selected: false,
-            },
-            {
-              value: "No Answer",
-              text: "No Answer",
-              selected: false,
-            },
-            {
-              value: "Not a Business",
-              text: "Not a Business",
-              selected: false,
-            },
-            {
-              value: "Not GCC number",
-              text: "Not GCC number",
-              selected: false,
-            },
-            {
-              value: "Not Interested",
-              text: "Not Interested",
-              selected: false,
-            },
-            {
-              value: "Not Qualified",
-              text: "Not Qualified",
-              selected: false,
-            },
-            {
-              value: "Voicemail",
-              text: "Voicemail",
-              selected: false,
-            },
-            {
-              value: "Will Visit You in the Office",
-              text: "Will Visit You in the Office",
-              selected: false,
-            },
-            {
-              value: "Wrong Number",
-              text: "Wrong Number",
-              selected: false,
-            },
-          ];
-          dispositionSelectOptions.forEach((option) => {
-            const opt = document.createElement("option");
-            opt.value = option.value;
-            opt.textContent = option.text;
-            opt.selected = option.selected;
-            dispositionSelect.appendChild(opt);
-          });
-        }
-        populateSelectInputs();
-
         // Handle form submission
         const form = document.getElementById("leadForm");
         form.addEventListener("submit", async function (e) {
@@ -428,5 +369,6 @@
         });
       });
     </script>
+    <script src="./index.js"></script>
   </body>
 </html>
