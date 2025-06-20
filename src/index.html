@@ -11,20 +11,45 @@
         Lead Information Form
       </h1>
 
-      <form class="space-y-4">
+      <form
+        class="space-y-4"
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScP64Y7mrK3-lPMSwYrqFe6gEMFxM3zA4A-2U1-ins_iIKznA/formResponse"
+        target="_self"
+        method="POST"
+        id="leadForm"
+        jsmodel="TOfxwf Q91hve CEkLOc"
+        data-shuffle-seed="-4736541388909228340"
+        data-clean-viewform-url="https://docs.google.com/forms/d/e/1FAIpQLScP64Y7mrK3-lPMSwYrqFe6gEMFxM3zA4A-2U1-ins_iIKznA/viewform"
+        data-response="%.@.]"
+        data-dlp-data="%.@.null,false]"
+        data-first-entry="0"
+        data-last-entry="7"
+        data-is-first-page="true"
+      >
+        <input type="hidden" name="fvv" value="1" />
+        <input
+          type="hidden"
+          name="partialResponse"
+          value='[null,null,"1741597018647186678"]'
+        />
+        <input type="hidden" name="pageHistory" value="0" />
+        <input type="hidden" name="fbzx" value="1741597018647186678" />
+        <input type="hidden" name="submissionTimestamp" value="-1" />
         <!-- Phone Field -->
         <div>
           <label
             for="phone"
-            class="block text-sm font-medium text-gray-700 mb-1"
+            class="block text-sm font-medium text-gray-700 mb-1 redstar"
             >Phone</label
           >
           <input
-            type="tel"
+            type="text"
             id="phone"
             name="entry.1063092661"
             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Enter phone number"
+            oninput="this.value = this.value.replace(/[^\d\s]/g, '')"
+            required
           />
         </div>
 
@@ -41,6 +66,7 @@
             name="entry.1306209959"
             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Enter last name"
+            value="unknown"
           />
         </div>
 
@@ -48,88 +74,94 @@
         <div>
           <label
             for="clickedAdd"
-            class="block text-sm font-medium text-gray-700 mb-1"
+            class="block text-sm font-medium text-gray-700 mb-1 redstar"
             >Clicked Add</label
           >
-          <input
-            type="text"
+          <select
             id="clickedAdd"
             name="entry.2133019744"
             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Enter clicked add information"
-          />
+            required
+          ></select>
         </div>
 
-        <!-- Company Field -->
-        <div>
-          <label
-            for="company"
-            class="block text-sm font-medium text-gray-700 mb-1"
-            >Company</label
-          >
-          <input
-            type="text"
-            id="company"
-            name="entry.1079823253"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Enter company name"
-          />
-        </div>
+        <!-- show more\less button -->
+        <button
+          id="moreBtn"
+          class="text-md text-blue-400 underline italic font-extrabold cursor-pointer"
+        >
+          show more
+        </button>
 
-        <!-- Lead Status Field -->
-        <div>
-          <label
-            for="leadStatus"
-            class="block text-sm font-medium text-gray-700 mb-1"
-            >Lead Status</label
-          >
-          <select
-            id="leadStatus"
-            name="entry.1010467890"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">Select lead status</option>
-            <option value="New">New</option>
-            <option value="Contacted">Contacted</option>
-            <option value="Qualified">Qualified</option>
-            <option value="Closed">Closed</option>
-          </select>
-        </div>
+        <!-- Extra Info Fields-->
+        <div
+          id="extraInfo"
+          class="space-y-4 h-0 overflow-hidden transition-all duration-300"
+        >
+          <!-- Company Field -->
+          <div>
+            <label
+              for="company"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Company</label
+            >
+            <input
+              type="text"
+              id="company"
+              name="entry.1079823253"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter company name"
+            />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <!-- Lead Status Field -->
+            <div>
+              <label
+                for="leadStatus"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Lead Status</label
+              >
+              <select
+                id="leadStatus"
+                name="entry.1010467890"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="" selected>Select lead status</option>
+              </select>
+            </div>
 
-        <!-- Disposition Field -->
-        <div>
-          <label
-            for="disposition"
-            class="block text-sm font-medium text-gray-700 mb-1"
-            >Disposition</label
-          >
-          <select
-            id="disposition"
-            name="entry.32520454"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">Select disposition</option>
-            <option value="Interested">Interested</option>
-            <option value="Not Interested">Not Interested</option>
-            <option value="Follow Up">Follow Up</option>
-            <option value="Wrong Number">Wrong Number</option>
-          </select>
-        </div>
+            <!-- Disposition Field -->
+            <div>
+              <label
+                for="disposition"
+                class="block text-sm font-medium text-gray-700 mb-1"
+                >Disposition</label
+              >
+              <select
+                id="disposition"
+                name="entry.32520454"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="" selected>Select disposition</option>
+              </select>
+            </div>
+          </div>
 
-        <!-- Notes Field -->
-        <div>
-          <label
-            for="notes"
-            class="block text-sm font-medium text-gray-700 mb-1"
-            >Notes</label
-          >
-          <textarea
-            id="notes"
-            name="entry.2023355555"
-            rows="3"
-            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Enter any additional notes"
-          ></textarea>
+          <!-- Notes Field -->
+          <div>
+            <label
+              for="notes"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Notes</label
+            >
+            <textarea
+              id="notes"
+              name="entry.2023355555"
+              rows="3"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter any additional notes"
+            ></textarea>
+          </div>
         </div>
 
         <!-- Submit Button -->
@@ -144,6 +176,256 @@
       </form>
     </div>
 
-    <script src="./index.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const moreBtn = document.getElementById("moreBtn");
+        const extraInfo = document.getElementById("extraInfo");
+        moreBtn.addEventListener("click", function (e) {
+          e.preventDefault(); // Prevent default link behavior
+          if (
+            extraInfo.style.height === "0px" ||
+            extraInfo.style.height === ""
+          ) {
+            extraInfo.style.height = "283px"; // Expand the section
+            extraInfo.style.overflow = "visible"; // Allow   overflow
+            moreBtn.textContent = "show less"; // Change button text to "less"
+          } else {
+            extraInfo.style.height = "0px"; // Collapse the section
+            extraInfo.style.overflow = "hidden"; // Hide overflow
+            moreBtn.textContent = "show more"; // Change button text to "more"
+          }
+        });
+
+        function populateSelectInputs() {
+          const clickedAddSelect = document.getElementById("clickedAdd");
+          const clickedAddSelectOptions = [
+            { value: "", text: "Select clicked Add", selected: true },
+            {
+              value: "سلامة الموقف الضريبي",
+              text: "سلامة الموقف الضريبي",
+              selected: false,
+            },
+            {
+              value: "خدمة التسعير و الاستشارة المجانية",
+              text: "خدمة التسعير و الاستشارة المجانية",
+              selected: false,
+            },
+            { value: "unknown", text: "Unknown", selected: false },
+          ];
+          // Populate the clickedAdd select element
+          clickedAddSelectOptions.forEach((option) => {
+            const opt = document.createElement("option");
+            opt.value = option.value;
+            opt.textContent = option.text;
+            opt.selected = option.selected;
+            clickedAddSelect.appendChild(opt);
+          });
+
+          const leadStatusSelect = document.getElementById("leadStatus");
+          const leadStatusSelectOptions = [
+            {
+              value: "Attempting to Contact",
+              text: "Attempting to Contact",
+              selected: false,
+            },
+            {
+              value: "Cold",
+              text: "Cold",
+              selected: false,
+            },
+            {
+              value: "Contact Failed",
+              text: "Contact Failed",
+              selected: false,
+            },
+            {
+              value: "Future Interest",
+              text: "Future Interest",
+              selected: false,
+            },
+            {
+              value: "Hot",
+              text: "Hot",
+              selected: false,
+            },
+            {
+              value: "Interested",
+              text: "Interested",
+              selected: false,
+            },
+            {
+              value: "Junk Lead",
+              text: "Junk Lead",
+              selected: false,
+            },
+            {
+              value: "Meeting Scheduled",
+              text: "Meeting Scheduled",
+              selected: false,
+            },
+            {
+              value: "Not Interested",
+              text: "Not Interested",
+              selected: false,
+            },
+            {
+              value: "Not Qualified",
+              text: "Not Qualified",
+              selected: false,
+            },
+            {
+              value: "Under Follow-Up",
+              text: "Under Follow-Up",
+              selected: false,
+            },
+          ];
+          leadStatusSelectOptions.forEach((option) => {
+            const opt = document.createElement("option");
+            opt.value = option.value;
+            opt.textContent = option.text;
+            opt.selected = option.selected;
+            leadStatusSelect.appendChild(opt);
+          });
+
+          const dispositionSelect = document.getElementById("disposition");
+          const dispositionSelectOptions = [
+            {
+              value: "Busy",
+              text: "Busy",
+              selected: false,
+            },
+            {
+              value: "Closed",
+              text: "Closed",
+              selected: false,
+            },
+            {
+              value: "Contact me Later.",
+              text: "Contact me Later.",
+              selected: false,
+            },
+            {
+              value: "Contact me via Email",
+              text: "Contact me via Email",
+              selected: false,
+            },
+            {
+              value: "Contact me via WhatsApp",
+              text: "Contact me via WhatsApp",
+              selected: false,
+            },
+            {
+              value: "Customer Refused Contact",
+              text: "Customer Refused Contact",
+              selected: false,
+            },
+            {
+              value: "CX'll inform the management",
+              text: "CX'll inform the management",
+              selected: false,
+            },
+            {
+              value: "Disconnected Number",
+              text: "Disconnected Number",
+              selected: false,
+            },
+            {
+              value: "Do Not Call (DNC)",
+              text: "Do Not Call (DNC)",
+              selected: false,
+            },
+            {
+              value: "Future Interest",
+              text: "Future Interest",
+              selected: false,
+            },
+            {
+              value: "I Will Get Back To You",
+              text: "I Will Get Back To You",
+              selected: false,
+            },
+            {
+              value: "Language Barrier",
+              text: "Language Barrier",
+              selected: false,
+            },
+            {
+              value: "No Answer",
+              text: "No Answer",
+              selected: false,
+            },
+            {
+              value: "Not a Business",
+              text: "Not a Business",
+              selected: false,
+            },
+            {
+              value: "Not GCC number",
+              text: "Not GCC number",
+              selected: false,
+            },
+            {
+              value: "Not Interested",
+              text: "Not Interested",
+              selected: false,
+            },
+            {
+              value: "Not Qualified",
+              text: "Not Qualified",
+              selected: false,
+            },
+            {
+              value: "Voicemail",
+              text: "Voicemail",
+              selected: false,
+            },
+            {
+              value: "Will Visit You in the Office",
+              text: "Will Visit You in the Office",
+              selected: false,
+            },
+            {
+              value: "Wrong Number",
+              text: "Wrong Number",
+              selected: false,
+            },
+          ];
+          dispositionSelectOptions.forEach((option) => {
+            const opt = document.createElement("option");
+            opt.value = option.value;
+            opt.textContent = option.text;
+            opt.selected = option.selected;
+            dispositionSelect.appendChild(opt);
+          });
+        }
+        populateSelectInputs();
+
+        // Handle form submission
+        const form = document.getElementById("leadForm");
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault(); // Prevent default form submission
+
+          const formData = new FormData(form);
+
+          try {
+            const response = await fetch(form.action, {
+              method: "POST",
+              mode: "no-cors", // Required for Google Forms
+              body: formData,
+            });
+
+            // You can show a success message here
+            // alert("Form submitted successfully!");
+            console.log("Form submitted successfully!", response);
+
+            // Optionally, clear the form or redirect
+            form.reset();
+          } catch (error) {
+            console.error("Form submission error:", error);
+            alert("There was an error submitting the form.");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
