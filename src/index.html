@@ -82,7 +82,9 @@
             name="entry.2133019744"
             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
-          ></select>
+          >
+            <option value="" selected>Select clicked Add</option>
+          </select>
         </div>
 
         <!-- show more\less button -->
@@ -199,7 +201,6 @@
         function populateSelectInputs() {
           const clickedAddSelect = document.getElementById("clickedAdd");
           const clickedAddSelectOptions = [
-            { value: "", text: "Select clicked Add", selected: true },
             {
               value: "سلامة الموقف الضريبي",
               text: "سلامة الموقف الضريبي",
