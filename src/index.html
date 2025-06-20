@@ -91,6 +91,7 @@
             class="block py-2.5 ps-6 pe-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             oninput="this.value = this.value.replace(/[^\d\s]/g, '')"
+            required
           />
           <label
             for="phone"
@@ -175,7 +176,7 @@
             class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             required
           >
-            <option selected>Select clicked Add</option>
+            <option value="" selected>Select clicked Add</option>
           </select>
         </div>
         <!-- <div>
@@ -346,6 +347,19 @@
         const form = document.getElementById("leadForm");
         form.addEventListener("submit", async function (e) {
           e.preventDefault(); // Prevent default form submission
+          const ins = [
+            ...Array.from(form.querySelectorAll("input")),
+            ...Array.from(form.querySelectorAll("select")),
+          ];
+          const reqIns = ins.filter((i) => i.required);
+          const allFilled = reqIns.every((i) => i.value.trim() !== "");
+          console.log("Required Inputs:", reqIns);
+          console.log("All Required Inputs Filled:", allFilled);
+          // Check if all required fields are filled
+          if (!allFilled) {
+            alert("Please fill in all required fields.");
+            return;
+          }
 
           const formData = new FormData(form);
 
