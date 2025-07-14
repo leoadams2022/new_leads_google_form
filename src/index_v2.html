@@ -219,12 +219,6 @@
             />
           </svg>
         </button>
-        <!-- <button
-          id="moreBtn"
-          class="text-md text-blue-400 underline italic font-extrabold cursor-pointer"
-        >
-          show more
-        </button> -->
 
         <!-- Extra Info Fields-->
         <div
@@ -829,14 +823,13 @@
 
       async function googleSubmition(params) {
         try {
-          const response = await fetch(
-            "https://docs.google.com/forms/u/0/d/e/1FAIpQLScP64Y7mrK3-lPMSwYrqFe6gEMFxM3zA4A-2U1-ins_iIKznA/formResponse",
-            {
-              method: "POST",
-              mode: "no-cors", // Required for Google Forms
-              body: getGoogleFormDataObject(),
-            }
-          );
+          const googleFormURL = `https://docs.google.com/forms/u/0/d/e/1FAIpQLSeZMmG_qDJt-gVcZ0i5AgCM-CnaKLoTnA-UvFIaBfvvUsyB5Q/formResponse`;
+          // "https://docs.google.com/forms/u/0/d/e/1FAIpQLScP64Y7mrK3-lPMSwYrqFe6gEMFxM3zA4A-2U1-ins_iIKznA/formResponse"
+          const response = await fetch(googleFormURL, {
+            method: "POST",
+            mode: "no-cors", // Required for Google Forms
+            body: getGoogleFormDataObject(),
+          });
 
           // You can show a success message here
           console.log("Form submitted successfully!", response);
