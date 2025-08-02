@@ -199,6 +199,7 @@
             <option value="خلط الحسابات يخرب الربح">
               خلط الحسابات يخرب الربح
             </option>
+            <option value="مسك الدفاتر">مسك الدفاتر</option>
           </select>
         </div>
 
@@ -827,7 +828,7 @@
         return formData;
       }
 
-      async function googleSubmition(params) {
+      async function googleSubmition() {
         try {
           const googleFormURL = `https://docs.google.com/forms/u/0/d/e/1FAIpQLSeZMmG_qDJt-gVcZ0i5AgCM-CnaKLoTnA-UvFIaBfvvUsyB5Q/formResponse`;
           // "https://docs.google.com/forms/u/0/d/e/1FAIpQLScP64Y7mrK3-lPMSwYrqFe6gEMFxM3zA4A-2U1-ins_iIKznA/formResponse"
@@ -851,56 +852,66 @@
         }
       }
       // handle form submition
+
+      // only for google form
       $(document).ready(function () {
         $("#webform6122728000006076030").submit(function (e) {
-          var ismandatory = true; // checkMandatory6122728000006076030();
           e.preventDefault();
-          if (ismandatory) {
-            if (typeof _wfa_track != "undefined" && _wfa_track.wfa_submit) {
-              _wfa_track.wfa_submit(e);
-            }
-            var formData = new FormData(this);
-            $.ajax({
-              url: "https://crm.zoho.com/crm/WebToLeadForm",
-              type: "POST",
-              data: formData,
-              cache: false,
-              contentType: false,
-              processData: false,
-              success: function (data) {
-                console.log("data: ", data);
-                // Show success alert
-                alertManager.show(
-                  "Your form has been submitted successfully!",
-                  5000,
-                  "success"
-                );
-                document
-                  .getElementById("webform6122728000006076030")
-                  .reset.click();
-                return;
-                // var splashinfodom = document.getElementById("wf_splash_info");
-                // splashinfodom.innerText = data.actionvalue;
-                // var splashdom = document.getElementById("wf_splash");
-                // document
-                //   .getElementById("webform6122728000006076030")
-                //   .reset.click();
-                // splashdom.style.display = "";
-                // setTimeout(function () {
-                //   splashdom.style.display = "none";
-                // }, 5000);
-                // document
-                //   .querySelector(".crmWebToEntityForm .formsubmit")
-                //   .removeAttribute("disabled");
-              },
-              error: function (data) {
-                alert("an error occurred");
-              },
-            });
-            googleSubmition();
-          }
+          googleSubmition();
+          document.getElementById("webform6122728000006076030").reset.click();
         });
       });
+      // For Zoho CRM form submission and Google Form submission
+      // $(document).ready(function () {
+      //   $("#webform6122728000006076030").submit(function (e) {
+      //     var ismandatory = true; // checkMandatory6122728000006076030();
+      //     e.preventDefault();
+      //     if (ismandatory) {
+      //       if (typeof _wfa_track != "undefined" && _wfa_track.wfa_submit) {
+      //         _wfa_track.wfa_submit(e);
+      //       }
+      //       var formData = new FormData(this);
+      //       $.ajax({
+      //         url: "https://crm.zoho.com/crm/WebToLeadForm",
+      //         type: "POST",
+      //         data: formData,
+      //         cache: false,
+      //         contentType: false,
+      //         processData: false,
+      //         success: function (data) {
+      //           console.log("data: ", data);
+      //           // Show success alert
+      //           alertManager.show(
+      //             "Your form has been submitted successfully!",
+      //             5000,
+      //             "success"
+      //           );
+      //           document
+      //             .getElementById("webform6122728000006076030")
+      //             .reset.click();
+      //           return;
+      //           // var splashinfodom = document.getElementById("wf_splash_info");
+      //           // splashinfodom.innerText = data.actionvalue;
+      //           // var splashdom = document.getElementById("wf_splash");
+      //           // document
+      //           //   .getElementById("webform6122728000006076030")
+      //           //   .reset.click();
+      //           // splashdom.style.display = "";
+      //           // setTimeout(function () {
+      //           //   splashdom.style.display = "none";
+      //           // }, 5000);
+      //           // document
+      //           //   .querySelector(".crmWebToEntityForm .formsubmit")
+      //           //   .removeAttribute("disabled");
+      //         },
+      //         error: function (data) {
+      //           alert("an error occurred");
+      //         },
+      //       });
+      //       googleSubmition();
+      //     }
+      //   });
+      // });
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
