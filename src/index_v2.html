@@ -839,13 +839,17 @@
           });
 
           // You can show a success message here
-          console.log("Form submitted successfully!", response);
-          alertManager.show("Form submitted successfully!", 3000, "success");
-        } catch (error) {
-          console.error("Form submission error:", error);
-          alert("There was an error submitting the form.");
+          console.log("Google Form submitted successfully!", response);
           alertManager.show(
-            "There was an error submitting the form.",
+            "Google Form submitted successfully!",
+            3000,
+            "success"
+          );
+        } catch (error) {
+          console.error("Google Form submission error:", error);
+          // alert("There was an error submitting the Google form.");
+          alertManager.show(
+            "There was an error submitting the Google Form.",
             5000,
             "danger"
           );
@@ -854,64 +858,64 @@
       // handle form submition
 
       // only for google form
-      $(document).ready(function () {
-        $("#webform6122728000006076030").submit(function (e) {
-          e.preventDefault();
-          googleSubmition();
-          document.getElementById("webform6122728000006076030").reset.click();
-        });
-      });
-      // For Zoho CRM form submission and Google Form submission
       // $(document).ready(function () {
       //   $("#webform6122728000006076030").submit(function (e) {
-      //     var ismandatory = true; // checkMandatory6122728000006076030();
       //     e.preventDefault();
-      //     if (ismandatory) {
-      //       if (typeof _wfa_track != "undefined" && _wfa_track.wfa_submit) {
-      //         _wfa_track.wfa_submit(e);
-      //       }
-      //       var formData = new FormData(this);
-      //       $.ajax({
-      //         url: "https://crm.zoho.com/crm/WebToLeadForm",
-      //         type: "POST",
-      //         data: formData,
-      //         cache: false,
-      //         contentType: false,
-      //         processData: false,
-      //         success: function (data) {
-      //           console.log("data: ", data);
-      //           // Show success alert
-      //           alertManager.show(
-      //             "Your form has been submitted successfully!",
-      //             5000,
-      //             "success"
-      //           );
-      //           document
-      //             .getElementById("webform6122728000006076030")
-      //             .reset.click();
-      //           return;
-      //           // var splashinfodom = document.getElementById("wf_splash_info");
-      //           // splashinfodom.innerText = data.actionvalue;
-      //           // var splashdom = document.getElementById("wf_splash");
-      //           // document
-      //           //   .getElementById("webform6122728000006076030")
-      //           //   .reset.click();
-      //           // splashdom.style.display = "";
-      //           // setTimeout(function () {
-      //           //   splashdom.style.display = "none";
-      //           // }, 5000);
-      //           // document
-      //           //   .querySelector(".crmWebToEntityForm .formsubmit")
-      //           //   .removeAttribute("disabled");
-      //         },
-      //         error: function (data) {
-      //           alert("an error occurred");
-      //         },
-      //       });
-      //       googleSubmition();
-      //     }
+      //     googleSubmition();
+      //     document.getElementById("webform6122728000006076030").reset.click();
       //   });
       // });
+      // For Zoho CRM form submission and Google Form submission
+      $(document).ready(function () {
+        $("#webform6122728000006076030").submit(function (e) {
+          var ismandatory = true; // checkMandatory6122728000006076030();
+          e.preventDefault();
+          if (ismandatory) {
+            if (typeof _wfa_track != "undefined" && _wfa_track.wfa_submit) {
+              _wfa_track.wfa_submit(e);
+            }
+            var formData = new FormData(this);
+            $.ajax({
+              url: "https://crm.zoho.com/crm/WebToLeadForm",
+              type: "POST",
+              data: formData,
+              cache: false,
+              contentType: false,
+              processData: false,
+              success: function (data) {
+                console.log("Zoho Formdata: ", data);
+                // Show success alert
+                alertManager.show(
+                  "Zoho Form has been submitted successfully!",
+                  5000,
+                  "success"
+                );
+                document
+                  .getElementById("webform6122728000006076030")
+                  .reset.click();
+                return;
+                // var splashinfodom = document.getElementById("wf_splash_info");
+                // splashinfodom.innerText = data.actionvalue;
+                // var splashdom = document.getElementById("wf_splash");
+                // document
+                //   .getElementById("webform6122728000006076030")
+                //   .reset.click();
+                // splashdom.style.display = "";
+                // setTimeout(function () {
+                //   splashdom.style.display = "none";
+                // }, 5000);
+                // document
+                //   .querySelector(".crmWebToEntityForm .formsubmit")
+                //   .removeAttribute("disabled");
+              },
+              error: function (data) {
+                alert("an error occurred");
+              },
+            });
+            googleSubmition();
+          }
+        });
+      });
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
