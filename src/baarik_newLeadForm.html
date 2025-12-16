@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lead Information Form</title>
+    <link
+      rel="icon"
+      href="./assets/images/lead-generation.png"
+      type="image/x-icon"
+    />
+    <link href="output.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+
+  <body
+    class="bg-gray-100 dark:bg-gray-900 text-black dark:text-white min-h-screen flex items-center justify-center p-4"
+  >
+    <main
+      class="bg-white dark:bg-gray-800 rounded-lg shadow-md px-6 py-8 w-full max-w-md relative"
+    >
+      <!-- Theme toggle -->
+      <button
+        id="theme-toggle"
+        type="button"
+        class="text-gray-500 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 absolute top-1 right-1 z-50"
+        aria-label="Toggle dark mode"
+      >
+        <svg
+          id="theme-toggle-dark-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="hidden w-5 h-5"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+          />
+        </svg>
+
+        <svg
+          id="theme-toggle-light-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="hidden w-5 h-5"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+          />
+        </svg>
+      </button>
+
+      <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+        Lead Information Form
+      </h1>
+
+      <form
+        class="space-y-6"
+        id="webform6122728000006076030"
+        name="WebToLeads6122728000006076030"
+        accept-charset="UTF-8"
+      >
+        <!-- Zoho hidden fields (required by WebToLead) -->
+        <div class="hidden">
+          <input
+            type="text"
+            name="xnQsjsdp"
+            value="8e575324f9271380681c41388a63eda4c9f24cb712221ff01199d83f951f5233"
+          />
+          <input type="hidden" name="zc_gad" id="zc_gad" value="" />
+          <input
+            type="text"
+            name="xmIwtLD"
+            value="04fe11ed3678f7a58005f817944cf282b3b987311e917f8ff65c0ca9fd2bbac5108613adc387f29e53f1841fba189696"
+          />
+          <input type="text" name="actionType" value="TGVhZHM=" />
+          <input type="text" name="returnURL" value="null" />
+          <input type="text" name="aG9uZXlwb3Q" value="" />
+        </div>
+
+        <!-- Phone -->
+        <div class="relative">
+          <input
+            type="text"
+            id="Phone"
+            name="Phone"
+            maxlength="30"
+            class="block py-2.5 ps-6 pe-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            inputmode="tel"
+            autocomplete="tel"
+            required
+          />
+          <label
+            for="Phone"
+            class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-placeholder-shown:start-6 peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto z-10 redstar"
+            >Phone number</label
+          >
+          <span
+            class="absolute start-0 bottom-3 text-gray-500 dark:text-gray-400 peer-focus:text-blue-600 peer-focus:dark:text-blue-600"
+            aria-hidden="true"
+          >
+            <svg
+              class="w-4 h-4 rtl:rotate-[270deg]"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 19 18"
+            >
+              <path
+                d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z"
+              />
+            </svg>
+          </span>
+        </div>
+
+        <!-- Name (Zoho: Last Name) -->
+        <div class="relative">
+          <input
+            type="text"
+            id="Last_Name"
+            name="Last Name"
+            maxlength="80"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            value="unknown"
+            required
+          />
+          <label
+            for="Last_Name"
+            class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto redstar"
+            >Name</label
+          >
+        </div>
+
+        <!-- Clicked Add -->
+        <div>
+          <label
+            for="LEADCF19"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white redstar"
+            >Clicked Add</label
+          >
+          <select
+            id="LEADCF19"
+            name="LEADCF19"
+            class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          >
+            <option value="-None-">-None-</option>
+            <option
+              value="&#x62e;&#x62f;&#x645;&#x629;&#x20;&#x627;&#x644;&#x62a;&#x633;&#x639;&#x64a;&#x631;&#x20;&#x648;&#x20;&#x627;&#x644;&#x627;&#x633;&#x62a;&#x634;&#x627;&#x631;&#x629;&#x20;&#x627;&#x644;&#x645;&#x62c;&#x627;&#x646;&#x64a;&#x629;"
+            >
+              خدمة التسعير والاستشارة المجانية
+            </option>
+            <option
+              value="&#x633;&#x644;&#x627;&#x645;&#x629;&#x20;&#x627;&#x644;&#x645;&#x648;&#x642;&#x641;&#x20;&#x627;&#x644;&#x636;&#x631;&#x64a;&#x628;&#x64a;"
+            >
+              سلامة الموقف الضريبي
+            </option>
+            <option value="تقرير مفصل ابداء من دفتر مضبوط">
+              تقرير مفصل ابداء من دفتر مضبوط
+            </option>
+            <option value="خلط الحسابات يخرب الربح">
+              خلط الحسابات يخرب الربح
+            </option>
+            <option value="مسك الدفاتر">مسك الدفاتر</option>
+          </select>
+        </div>
+
+        <!-- Show more / less -->
+        <button
+          type="button"
+          id="moreBtn"
+          class="inline-flex items-center text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-1 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
+          aria-expanded="false"
+          aria-controls="extraInfo"
+        >
+          <span>Show More</span>
+          <svg
+            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+        </button>
+
+        <!-- Extra fields (collapsed by default) -->
+        <div
+          id="extraInfo"
+          class="space-y-6 mt-4 h-0 overflow-hidden transition-all duration-300 origin-top"
+        >
+          <!-- Email -->
+          <div class="relative">
+            <input
+              type="email"
+              id="Email"
+              name="Email"
+              maxlength="100"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              autocomplete="email"
+            />
+            <label
+              for="Email"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+              >Email</label
+            >
+          </div>
+
+          <!-- Website -->
+          <div class="relative">
+            <input
+              type="url"
+              id="Website"
+              name="Website"
+              maxlength="255"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              autocomplete="url"
+            />
+            <label
+              for="Website"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+              >Website</label
+            >
+          </div>
+
+          <!-- File Name -->
+          <div class="relative">
+            <input
+              type="text"
+              id="LEADCF5"
+              name="LEADCF5"
+              maxlength="255"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              value="makaseb_2025"
+              required
+            />
+            <label
+              for="LEADCF5"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto redstar"
+              >File Name</label
+            >
+          </div>
+
+          <!-- Lead Source -->
+          <div>
+            <label
+              for="Lead_Source"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white redstar"
+              >Lead Source</label
+            >
+            <select
+              id="Lead_Source"
+              name="Lead Source"
+              class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              required
+            >
+              <option value="-None-">-None-</option>
+              <option value="Direct&#x20;Call">Direct Call</option>
+              <option value="Facebook" selected>Facebook</option>
+              <option value="Google">Google</option>
+              <option value="Lead&#x20;Files">Lead Files</option>
+              <option value="Partner">Partner</option>
+              <option value="Referral">Referral</option>
+              <option value="Website">Website</option>
+              <option value="WhatsApp">WhatsApp</option>
+            </select>
+          </div>
+
+          <!-- Company -->
+          <div class="relative">
+            <input
+              type="text"
+              id="Company"
+              name="Company"
+              maxlength="200"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              autocomplete="organization"
+            />
+            <label
+              for="Company"
+              class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+              >Company</label
+            >
+          </div>
+
+          <!-- Lead status + disposition -->
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="Lead_Status" class="sr-only">Lead Status</label>
+              <select
+                id="Lead_Status"
+                name="Lead Status"
+                class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                <option value="-None-">-None-</option>
+                <option selected value="Attempting&#x20;to&#x20;Contact">
+                  Attempting to Contact
+                </option>
+                <option value="Cold">Cold</option>
+                <option value="Contact&#x20;Failed">Contact Failed</option>
+                <option value="Future&#x20;Interest">Future Interest</option>
+                <option value="Hot">Hot</option>
+                <option value="Interested">Interested</option>
+                <option value="Junk&#x20;Lead">Junk Lead</option>
+                <option value="Meeting&#x20;Scheduled">
+                  Meeting Scheduled
+                </option>
+                <option value="Not&#x20;Interested">Not Interested</option>
+                <option value="Not&#x20;Qualified">Not Qualified</option>
+                <option value="Under&#x20;Follow-Up">Under Follow-Up</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="LEADCF8" class="sr-only">Disposition</label>
+              <select
+                id="LEADCF8"
+                name="LEADCF8"
+                class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              >
+                <option value="-None-">-None-</option>
+                <option value="Busy">Busy</option>
+                <option value="Closed">Closed</option>
+                <option value="Contact&#x20;me&#x20;Later.">
+                  Contact me Later.
+                </option>
+                <option value="Contact&#x20;me&#x20;via&#x20;Email">
+                  Contact me via Email
+                </option>
+                <option value="Contact&#x20;me&#x20;via&#x20;WhatsApp">
+                  Contact me via WhatsApp
+                </option>
+                <option value="Customer&#x20;Refused&#x20;Contact">
+                  Customer Refused Contact
+                </option>
+                <option value="CX&#x27;ll&#x20;inform&#x20;the&#x20;management">
+                  CX&#x27;ll inform the management
+                </option>
+                <option value="Disconnected&#x20;Number">
+                  Disconnected Number
+                </option>
+                <option value="Do&#x20;Not&#x20;Call&#x20;&#x28;DNC&#x29;">
+                  Do Not Call &#x28;DNC&#x29;
+                </option>
+                <option value="Future&#x20;Interest">Future Interest</option>
+                <option value="I&#x20;Will&#x20;Get&#x20;Back&#x20;To&#x20;You">
+                  I Will Get Back To You
+                </option>
+                <option value="Language&#x20;Barrier">Language Barrier</option>
+                <option value="No&#x20;Answer">No Answer</option>
+                <option value="Not&#x20;a&#x20;Business">Not a Business</option>
+                <option value="Not&#x20;GCC&#x20;number">Not GCC number</option>
+                <option value="Not&#x20;Interested">Not Interested</option>
+                <option value="Not&#x20;Qualified">Not Qualified</option>
+                <option value="Voicemail">Voicemail</option>
+                <option
+                  value="Will&#x20;Visit&#x20;You&#x20;in&#x20;the&#x20;Office"
+                >
+                  Will Visit You in the Office
+                </option>
+                <option value="Wrong&#x20;Number">Wrong Number</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Notes -->
+          <div>
+            <label
+              for="LEADCF9"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Extra-Info</label
+            >
+            <textarea
+              id="LEADCF9"
+              name="LEADCF9"
+              rows="4"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+              placeholder="Enter any additional information here..."
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex gap-2">
+          <button
+            type="submit"
+            id="formsubmit"
+            class="relative w-full inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 cursor-pointer"
+          >
+            <span
+              class="relative w-full font-extrabold px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent"
+              >Submit</span
+            >
+          </button>
+
+          <button
+            type="reset"
+            class="relative w-full inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-red-500 to-red-700 group-hover:from-red-500 group-hover:to-red-700 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-red-200 dark:focus:ring-red-800 cursor-pointer"
+          >
+            <span
+              class="relative w-full font-extrabold px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent"
+              >Reset</span
+            >
+          </button>
+        </div>
+      </form>
+
+      <!-- Optional link (currently hidden) -->
+      <a
+        href="./data.html"
+        class="hidden absolute bottom-1 left-1 items-center text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
+      >
+        View Data
+        <svg
+          class="w-4 h-4 ms-2 rtl:rotate-180"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9"
+          />
+        </svg>
+      </a>
+    </main>
+
+    <!-- Alerts mount point -->
+    <div id="alerts-container" class="fixed z-20 top-6 right-2 w-[300px]"></div>
+
+    <script>
+      /**
+       * Small alert system (creates/destroys alert DOM nodes).
+       */
+      class AlertManager {
+        constructor(containerId, position = "top", direction = "rtl") {
+          this.container = document.getElementById(containerId);
+          if (!this.container) {
+            throw new Error(
+              `Alert container with ID "${containerId}" not found.`
+            );
+          }
+
+          this.container.classList.add("overflow-x-hidden", "overflow-y-auto");
+
+          if (!["top", "bottom"].includes(position)) {
+            throw new Error(
+              `Invalid position "${position}". Use "top" or "bottom".`
+            );
+          }
+          if (!["rtl", "ltr"].includes(direction)) {
+            throw new Error(
+              `Invalid direction "${direction}". Use "rtl" or "ltr".`
+            );
+          }
+
+          this.position = position;
+          this.direction = direction;
+          this.translateClass =
+            direction === "rtl" ? "translate-x-full" : "-translate-x-full";
+
+          this.variants = {
+            danger: [
+              "text-red-800",
+              "border-red-300",
+              "bg-red-50",
+              "dark:text-red-400",
+              "dark:bg-gray-800",
+              "dark:border-red-800",
+            ],
+            info: [
+              "text-blue-800",
+              "border-blue-300",
+              "bg-blue-50",
+              "dark:text-blue-400",
+              "dark:bg-gray-800",
+              "dark:border-blue-800",
+            ],
+            success: [
+              "text-green-800",
+              "border-green-300",
+              "bg-green-50",
+              "dark:text-green-400",
+              "dark:bg-gray-800",
+              "dark:border-green-800",
+            ],
+            default: [
+              "border-gray-300",
+              "bg-gray-50",
+              "dark:bg-gray-800",
+              "dark:border-gray-600",
+            ],
+          };
+        }
+
+        show(message, timeout = 3000, variant = "default") {
+          const variantClass = (
+            this.variants[variant] || this.variants.default
+          ).join(" ");
+          const { alertElement, closeButton } = this._createAlertElement(
+            message,
+            variantClass
+          );
+
+          this.position === "top"
+            ? this.container.append(alertElement)
+            : this.container.prepend(alertElement);
+
+          // Trigger enter transition
+          setTimeout(
+            () => alertElement.classList.remove(this.translateClass),
+            50
+          );
+
+          closeButton.addEventListener("click", () =>
+            this._dismissAlert(alertElement)
+          );
+
+          if (timeout > 0) {
+            setTimeout(() => this._dismissAlert(alertElement), timeout);
+          }
+        }
+
+        _dismissAlert(alertElement) {
+          alertElement.classList.add(this.translateClass);
+          setTimeout(() => alertElement.remove(), 300);
+        }
+
+        _createAlertElement(text, variantClass) {
+          const container = document.createElement("div");
+          container.className =
+            `${this.translateClass} duration-300 ease-in-out border border-t-4 items-center p-4 mb-3 flex ` +
+            variantClass;
+          container.setAttribute("role", "alert");
+
+          const icon = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "svg"
+          );
+          icon.setAttribute("class", "shrink-0 w-4 h-4");
+          icon.setAttribute("aria-hidden", "true");
+          icon.setAttribute("fill", "currentColor");
+          icon.setAttribute("viewBox", "0 0 20 20");
+
+          const iconPath = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "path"
+          );
+          iconPath.setAttribute(
+            "d",
+            "M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          );
+          icon.appendChild(iconPath);
+
+          const textDiv = document.createElement("div");
+          textDiv.className = "ms-3 text-sm font-medium";
+          textDiv.textContent = text;
+
+          const closeButton = document.createElement("button");
+          closeButton.type = "button";
+          closeButton.setAttribute("aria-label", "Close");
+          closeButton.className =
+            "ms-auto -mx-1.5 -my-1.5 bg-slate-50 rounded-lg focus:ring-2 p-1.5 inline-flex items-center justify-center h-8 w-8 dark:bg-slate-800 dark:hover:bg-slate-700";
+
+          const srOnly = document.createElement("span");
+          srOnly.className = "sr-only";
+          srOnly.textContent = "Dismiss";
+
+          const closeIcon = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "svg"
+          );
+          closeIcon.setAttribute("class", "w-3 h-3");
+          closeIcon.setAttribute("aria-hidden", "true");
+          closeIcon.setAttribute("fill", "none");
+          closeIcon.setAttribute("viewBox", "0 0 14 14");
+
+          const closePath = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "path"
+          );
+          closePath.setAttribute("stroke", "currentColor");
+          closePath.setAttribute("stroke-linecap", "round");
+          closePath.setAttribute("stroke-linejoin", "round");
+          closePath.setAttribute("stroke-width", "2");
+          closePath.setAttribute("d", "m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6");
+
+          closeIcon.appendChild(closePath);
+          closeButton.append(srOnly, closeIcon);
+
+          container.append(icon, textDiv, closeButton);
+
+          return { alertElement: container, closeButton };
+        }
+      }
+
+      const alertManager = new AlertManager("alerts-container", "top", "rtl");
+
+      /**
+       * Keep only digits/spaces in phone input.
+       */
+      function sanitizePhoneInput(value) {
+        return value.replace(/[^\d\s]/g, "");
+      }
+
+      /**
+       * Collect values and map them to Google Form "entry.*" keys.
+       */
+      function createGoogleFormData() {
+        const get = (id) => document.getElementById(id)?.value?.trim() ?? "";
+
+        const formData = new FormData();
+        formData.append("entry.1063092661", get("Last_Name"));
+        formData.append("entry.1306209959", get("Phone"));
+        formData.append("entry.2133019744", get("Email"));
+        formData.append("entry.1079823253", get("Website"));
+        formData.append("entry.1010467890", get("LEADCF5"));
+        formData.append("entry.32520454", get("Lead_Source"));
+        formData.append("entry.1470596328", get("LEADCF19"));
+        formData.append("entry.601157829", get("Company"));
+        formData.append("entry.1427705030", get("Lead_Status"));
+        formData.append("entry.1245409387", get("LEADCF8"));
+        formData.append("entry.2023355555", get("LEADCF9"));
+        return formData;
+      }
+
+      /**
+       * Submit to Google Forms using no-cors (no readable response by design).
+       */
+      async function submitToGoogleForm() {
+        const googleFormURL =
+          "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeZMmG_qDJt-gVcZ0i5AgCM-CnaKLoTnA-UvFIaBfvvUsyB5Q/formResponse";
+
+        try {
+          await fetch(googleFormURL, {
+            method: "POST",
+            mode: "no-cors",
+            body: createGoogleFormData(),
+          });
+          alertManager.show(
+            "Google Form submitted successfully!",
+            3000,
+            "success"
+          );
+        } catch (err) {
+          console.error("Google Form submission error:", err);
+          alertManager.show(
+            "There was an error submitting the Google Form.",
+            5000,
+            "danger"
+          );
+        }
+      }
+
+      /**
+       * Update aria-selected so screen readers can announce the selected option.
+       */
+      function syncAriaSelected(selectEl) {
+        const prev = selectEl.querySelector('[aria-selected="true"]');
+        if (prev) prev.removeAttribute("aria-selected");
+
+        const current = selectEl.options[selectEl.selectedIndex];
+        if (current) current.setAttribute("aria-selected", "true");
+      }
+
+      $(document).ready(function () {
+        const $form = $("#webform6122728000006076030");
+        const formEl = $form[0];
+
+        // Phone sanitizer
+        $("#Phone").on("input", function () {
+          this.value = sanitizePhoneInput(this.value);
+        });
+
+        // Keep aria-selected in sync on selects
+        $("#LEADCF19, #Lead_Source, #Lead_Status, #LEADCF8").on(
+          "change",
+          function () {
+            syncAriaSelected(this);
+          }
+        );
+
+        // Zoho + Google submission
+        $form.on("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(formEl);
+
+          $.ajax({
+            url: "https://crm.zoho.com/crm/WebToLeadForm",
+            type: "POST",
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+              console.log("Zoho response:", data);
+              alertManager.show(
+                "Zoho Form has been submitted successfully!",
+                5000,
+                "success"
+              );
+              formEl.reset();
+            },
+            error: function (xhr) {
+              console.error("Zoho submission error:", xhr);
+              alertManager.show(
+                "There was an error submitting the Zoho form.",
+                5000,
+                "danger"
+              );
+            },
+          });
+
+          // Fire-and-forget Google Form (kept separate from Zoho result)
+          submitToGoogleForm();
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Theme: apply saved preference (or OS preference) and keep icon state correct.
+        const darkIcon = document.getElementById("theme-toggle-dark-icon");
+        const lightIcon = document.getElementById("theme-toggle-light-icon");
+        const toggleBtn = document.getElementById("theme-toggle");
+
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        const saved = localStorage.getItem("color-theme");
+        const isDark = saved ? saved === "dark" : prefersDark;
+
+        document.documentElement.classList.toggle("dark", isDark);
+        lightIcon.classList.toggle("hidden", !isDark);
+        darkIcon.classList.toggle("hidden", isDark);
+
+        toggleBtn.addEventListener("click", () => {
+          const nowDark = !document.documentElement.classList.contains("dark");
+          document.documentElement.classList.toggle("dark", nowDark);
+          localStorage.setItem("color-theme", nowDark ? "dark" : "light");
+          lightIcon.classList.toggle("hidden", !nowDark);
+          darkIcon.classList.toggle("hidden", nowDark);
+        });
+
+        // Show more / less (animate height + update ARIA)
+        const moreBtn = document.getElementById("moreBtn");
+        const moreBtnText = moreBtn.querySelector("span");
+        const moreBtnIcon = moreBtn.querySelector("svg");
+        const extraInfo = document.getElementById("extraInfo");
+
+        moreBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const isCollapsed =
+            extraInfo.style.height === "" || extraInfo.style.height === "0px";
+
+          if (isCollapsed) {
+            extraInfo.style.height = "auto";
+            extraInfo.style.overflow = "visible";
+            extraInfo.style.transform = "scaleY(1)";
+            moreBtnText.textContent = "Show Less";
+            moreBtnIcon.classList.add("-rotate-90");
+            moreBtn.setAttribute("aria-expanded", "true");
+            return;
+          }
+
+          moreBtnText.textContent = "Show More";
+          moreBtnIcon.classList.remove("-rotate-90");
+          moreBtn.setAttribute("aria-expanded", "false");
+
+          extraInfo.style.transform = "scaleY(0)";
+          setTimeout(() => {
+            extraInfo.style.height = "0px";
+            extraInfo.style.overflow = "hidden";
+          }, 300);
+        });
+      });
+    </script>
+  </body>
+</html>
