@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -16,9 +16,22 @@
   <body
     class="bg-gray-100 dark:bg-gray-900 text-black dark:text-white min-h-screen flex items-center justify-center p-4"
   >
-    <!-- from container  -->
+    <p class="text-4xl text-center px-4">
+      <a
+        href="https://arbah-new-leads-form.vercel.app/"
+        class="block mb-4 underline text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+      >
+        NEW VERSION
+      </a>
+      <br />
+      move to new version of the form with better UI and UX and more fields and
+      validation and alerts and dark mode toggle and show more\less button and
+      view data link and better accessibility and responsiveness
+    </p>
+
+    <!-- from container Hidden  -->
     <div
-      class="bg-white dark:bg-gray-800 rounded-lg shadow-md px-6 py-8 w-full max-w-md relative"
+      class="bg-white dark:bg-gray-800 rounded-lg shadow-md px-6 py-8 w-full max-w-md relative hidden"
     >
       <!-- dark/light mode toggle button  -->
       <button
@@ -593,7 +606,7 @@
       function addAriaSelected6122728000006076030() {
         var optionElem = event.target;
         var previousSelectedOption = optionElem.querySelector(
-          "[aria-selected=true]"
+          "[aria-selected=true]",
         );
         if (previousSelectedOption) {
           previousSelectedOption.removeAttribute("aria-selected");
@@ -608,7 +621,7 @@
           this.container = document.getElementById(containerId);
           if (!this.container) {
             throw new Error(
-              `Alert container with ID "${containerId}" not found.`
+              `Alert container with ID "${containerId}" not found.`,
             );
           }
           // container should have the following styles:
@@ -616,12 +629,12 @@
           // Validate position and direction
           if (position !== "bottom" && position !== "top") {
             throw new Error(
-              `Invalid position "${position}". Use "top" or "bottom".`
+              `Invalid position "${position}". Use "top" or "bottom".`,
             );
           }
           if (direction !== "rtl" && direction !== "ltr") {
             throw new Error(
-              `Invalid direction "${direction}". Use "rtl" or "ltr".`
+              `Invalid direction "${direction}". Use "rtl" or "ltr".`,
             );
           }
           // Set the position and direction
@@ -667,7 +680,8 @@
         show(message, timeout = 3000, variant = "default") {
           const { alertElement, closeButton } = this._createAlertElement(
             message,
-            this.variants[variant]?.join(" ") || this.variants.default.join(" ")
+            this.variants[variant]?.join(" ") ||
+              this.variants.default.join(" "),
           );
           if (this.position === "top") {
             this.container.append(alertElement);
@@ -705,7 +719,7 @@
 
           const icon = document.createElementNS(
             "http://www.w3.org/2000/svg",
-            "svg"
+            "svg",
           );
           icon.setAttribute("class", "shrink-0 w-4 h-4");
           icon.setAttribute("aria-hidden", "true");
@@ -714,11 +728,11 @@
 
           const iconPath = document.createElementNS(
             "http://www.w3.org/2000/svg",
-            "path"
+            "path",
           );
           iconPath.setAttribute(
             "d",
-            "M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+            "M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z",
           );
           icon.appendChild(iconPath);
 
@@ -738,7 +752,7 @@
 
           const closeIcon = document.createElementNS(
             "http://www.w3.org/2000/svg",
-            "svg"
+            "svg",
           );
           closeIcon.setAttribute("class", "w-3 h-3");
           closeIcon.setAttribute("aria-hidden", "true");
@@ -747,7 +761,7 @@
 
           const closePath = document.createElementNS(
             "http://www.w3.org/2000/svg",
-            "path"
+            "path",
           );
           closePath.setAttribute("stroke", "currentColor");
           closePath.setAttribute("stroke-linecap", "round");
@@ -846,7 +860,7 @@
           alertManager.show(
             "Google Form submitted successfully!",
             3000,
-            "success"
+            "success",
           );
         } catch (error) {
           console.error("Google Form submission error:", error);
@@ -854,7 +868,7 @@
           alertManager.show(
             "There was an error submitting the Google Form.",
             5000,
-            "danger"
+            "danger",
           );
         }
       }
@@ -891,7 +905,7 @@
                 alertManager.show(
                   "Zoho Form has been submitted successfully!",
                   5000,
-                  "success"
+                  "success",
                 );
                 document
                   .getElementById("webform6122728000006076030")
@@ -934,10 +948,10 @@
             document.documentElement.classList.remove("dark");
           }
           var themeToggleDarkIcon = document.getElementById(
-            "theme-toggle-dark-icon"
+            "theme-toggle-dark-icon",
           );
           var themeToggleLightIcon = document.getElementById(
-            "theme-toggle-light-icon"
+            "theme-toggle-light-icon",
           );
 
           // Change the icons inside the button based on previous settings
